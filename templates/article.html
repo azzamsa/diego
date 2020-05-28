@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+
+{% block content %}
+
+    <h1>{{ article.title }}</h1>
+    <div class="post-meta">
+        {% include 'includes/last_updated.html' %}
+        {% include 'includes/post_stats.html' %}
+    </div>
+
+    <div class="entry-content">
+        {{ article.content }}
+    </div>
+
+{% endblock %}

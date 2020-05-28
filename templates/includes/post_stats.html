@@ -1,0 +1,3 @@
+{% if article.stats and article.stats['read_mins'] and article.stats['read_mins'] > 3 %}
+    • ~{{ article.stats['read_mins'] }} min read
+{% endif %}

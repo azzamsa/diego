@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="author" content=""/>
+        <meta name="description" content=""/>
+        <meta name="referrer" content="no-referrer"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Azzam S.A Blog</title>
+        <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico" type="image/x-icon" />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono"/>
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css">
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css" media="screen"/>
+    </head>
+
+    <body>
+        <div class="banner">
+            <a href="{{ SITEURL }}"><img src="" alt="" /></a>
+            <div>
+                <a id="name" href="{{ SITEURL }}"><h1>Azzam S.A's Blog</h1></a>
+                <nav>
+                    <a href="#">Favorites</a>
+                    <a href="#">Projects & contributions</a>
+                </nav>
+            </div>
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+        {% include 'includes/analytics.html' %}
+        {#% include 'includes/comments.html' %#}
+        {% include 'footer.html' %}
+    </body>
+</html>

@@ -1,0 +1,73 @@
+{% set intro = COMMENTS_INTRO %}
+{% set identifier = SITEURL+ '/' + article.url %}
+{% if article.comments_intro %}
+    {% set intro = article.comments_intro %}
+{% endif %}
+
+{% if not UTTERANCES_THEME %}
+    {% set UTTERANCES_THEME = 'github-light' %}
+{% else %}
+    {% set UTTERANCES_THEME = UTTERANCES_THEME %}
+{% endif %}
+
+
+{% if article.status != 'draft' and article.comments != 'False' %}
+    <section>
+        <h6 style="display:none;">Comments</h6>
+        <p id="comment-message">{{ intro }} </p>
+
+        <div class="accordion" id="accordion2">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle disqus-comment-count comment-count collapsed"
+                       data-toggle="collapse"
+                       data-parent="#accordion2"
+                       href="{{ url }}#comment_thread"
+                       id="comment-accordion-toggle">
+                        Comments
+                    </a>
+                </div>
+                <div id="comment_thread" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <div class="comments">
+                            {% if use_utterances %}
+                                <script src="https://utteranc.es/client.js"
+                                        data-repo="{{ UTTERANCES_REPO }}"
+                                        data-issue-term="{{ identifier }}"
+                                        data-label="{{ UTTERANCES_LABEL }}"
+                                        data-theme="{{ theme }}"
+                                        crossorigin="anonymous"
+                                        async>
+                                </script>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
