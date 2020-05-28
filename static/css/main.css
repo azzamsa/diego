@@ -84,13 +84,17 @@ pre {
 }
 
 code {
-    background-color: var(--code-bg);
+    background-color: #F7F7F9;
+    color: #DD114F;
     font-size: 90%;
     padding: 2px 4px;
-    border-radius: 0.3em;
+    border: 1px solid #E1E1E8;
+    border-radius: 0.2em;
 }
-pre code {
-    padding: 0px;
+
+pre code{
+    font-size: rfs(0.9rem);
+    font-family: 'Roboto Mono', monospace;
 }
 a {
     text-decoration: none;
