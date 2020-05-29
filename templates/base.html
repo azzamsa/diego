@@ -7,7 +7,7 @@
         <meta name="referrer" content="no-referrer"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <title>Azzam S.A Blog</title>
+        <title>{{ SITENAME }}</title>
         <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico" type="image/x-icon" />
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono"/>
@@ -17,12 +17,14 @@
 
     <body>
         <div class="banner">
-            <a href="{{ SITEURL }}"><img src="" alt="" /></a>
+            <a href="{{ SITEURL }}">
+                <img alt="face" src="{{ SITEURL }}/theme/img/avatar.svg" width="100">
+            </a>
             <div>
-                <a id="name" href="{{ SITEURL }}"><h1>Azzam S.A's Blog</h1></a>
+                <a id="name" href="{{ SITEURL }}"><h1>{{ SITENAME }}</h1></a>
                 <nav>
-                    <a href="#">Favorites</a>
-                    <a href="#">Projects & contributions</a>
+                    <a href="/favourites">Favorites</a>
+                    <a href="/projects">Projects & contributions</a>
                 </nav>
             </div>
         </div>
