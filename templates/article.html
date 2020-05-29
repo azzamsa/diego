@@ -13,4 +13,9 @@
         {{ article.content }}
     </div>
 
+    <di>
+        {% from 'includes/comments.html' import comments_section with context %}
+        {{ comments_section(article) }}
+    </di>
+
 {% endblock %}
