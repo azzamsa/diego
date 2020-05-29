@@ -16,6 +16,14 @@
     </head>
 
     <body>
+        <div class="lang">
+            {% if DEFAULT_LANG == "en" %}
+                <a href="{{ PERMANENTURL }}/id">🇮🇩</a>
+            {% else %}
+                <a href="{{ PERMANENTURL }}">🇬🇧</a>
+            {% endif %}
+        </div>
+
         <div class="banner">
             <a href="{{ SITEURL }}">
                 <img alt="face" src="{{ SITEURL }}/theme/img/avatar.svg" width="100">
@@ -23,8 +31,9 @@
             <div>
                 <a id="name" href="{{ SITEURL }}"><h1>{{ SITENAME }}</h1></a>
                 <nav>
-                    <a href="/favourites">Favorites</a>
-                    <a href="/projects">Projects & contributions</a>
+                    <a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Blog</a>
+                    <a href="{{ SITEURL }}/project">Projects</a>
+                    <a href="{{ SITEURL }}/about">About</a>
                 </nav>
             </div>
         </div>
@@ -34,6 +43,6 @@
 
         {% include 'includes/analytics.html' %}
         {#% include 'includes/comments.html' %#}
-        {% include 'footer.html' %}
+        {% include 'includes/footer.html' %}
     </body>
 </html>

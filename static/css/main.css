@@ -1,5 +1,3 @@
-@import url("pygment.css");
-
 :root {
   --body-color:   #37474f;
   --header-color: #213038;
@@ -289,12 +287,12 @@ iframe {
 .warning a:hover {
   color: var(--warning-anchor-hover-color);
 }
-.flathub {
-    padding-top: 0.9em;
-    margin: auto;
-    width: 240px;
+.lang {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    padding-bottom: 1em;
 }
-
 @media screen and (max-width: 690px) {
     body {
         margin: 2em 1em;
@@ -322,3 +320,4 @@ iframe {
         display: none;
     }
 }
+
