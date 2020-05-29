@@ -18,9 +18,13 @@
     <body>
         <div class="lang">
             {% if DEFAULT_LANG == "en" %}
-                <a href="{{ PERMANENTURL }}/id/{{ ARCHIVES_URL }}">🇮🇩</a>
+                <a href="{{ PERMANENTURL }}/id/{{ ARCHIVES_URL }}">
+                    <img alt="id" src="{{ SITEURL }}/theme/img/id.png" width="20">
+                </a>
             {% else %}
-                <a href="{{ PERMANENTURL }}/{{ ARCHIVES_URL }}">🇬🇧</a>
+                <a href="{{ PERMANENTURL }}/{{ ARCHIVES_URL }}">
+                    <img alt="id" src="{{ SITEURL }}/theme/img/gb.png" width="20">
+                </a>
             {% endif %}
         </div>
 
