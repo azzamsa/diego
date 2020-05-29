@@ -289,8 +289,8 @@ iframe {
 }
 .lang {
     display: flex;
-    align-items: right;
-    justify-content: right;
+    align-items: flex-end;
+    justify-content: flex-end;
     padding-bottom: 1em;
 }
 @media screen and (max-width: 690px) {
