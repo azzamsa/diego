@@ -26,14 +26,14 @@
 
         <div class="banner">
             <a href="{{ SITEURL }}">
-                <img alt="face" src="{{ SITEURL }}/theme/img/avatar.svg" width="100">
+                <img alt="logo" src="{{ SITEURL }}/theme/img/avatar.svg" width="100">
             </a>
             <div>
                 <a id="name" href="{{ SITEURL }}"><h1>{{ SITENAME }}</h1></a>
                 <nav>
                     <a href="{{ SITEURL }}/{{ ARCHIVES_URL }}">Blog</a>
-                    <a href="{{ SITEURL }}/project">Projects</a>
-                    <a href="{{ SITEURL }}/about">About</a>
+                    <a href="{{ SITEURL }}/project">{{ gettext('Projects') }}</a>
+                    <a href="{{ SITEURL }}/about">{{ gettext('About') }}</a>
                 </nav>
             </div>
         </div>

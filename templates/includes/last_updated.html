@@ -1,18 +1,19 @@
 {% if article.date %}
     {% set day = article.date.strftime('%d')|int %}
-    Posted:
+    {{ gettext('Posted') }}:
     <time datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
 {% endif %}
 
 {% if article.locale_modified and article.modified %}
     {% set delta = (article.modified - article.date).days %}
     {% if delta > 0 %}
-        • Last Updated
+        • {{ gettext('Last Updated') }}
+
         {% set day = article.modified.strftime('%d')|int %}
         <time datetime="{{ article.modified.isoformat() }}">{{ article.modified.strftime('%b') }} {{ day }} {{- article.modified.strftime(', %Y') }}</time>
     {% endif %}
 
-    {% elif article.modified %}
-    • Last Updated:
+{% elif article.modified %}
+    • {{ gettext('Last Updated') }}
     <div class="last-updated">{{ article.modified }}</div>
 {% endif %}
