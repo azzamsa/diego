@@ -6,7 +6,7 @@
 
     {% set identifier = SITEURL+ '/' + article.url %}
 
-    {% if article.status != 'draft' and article.comments != 'False' %}
+    {% if article.status != 'draft' and article.comments != 'False' and UTTERANCES_REPO %}
         <div class="comment">
             <p id="comment-message" style="color:gray;">{{ intro }} </p>
             <div class="tabs">
