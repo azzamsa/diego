@@ -326,6 +326,12 @@ iframe {
   margin-top: 3em;
 }
 
+.motto {
+    text-align: center;
+    color:#AAAAAA;
+    margin-top:-1px;
+}
+
 input {
   position: absolute;
   opacity: 0;

@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 
 {% block content_title %}{% endblock %}
+
 {% block content %}
+    <h4 class="motto">
+        Solving Hard Things To Make People Live Happily
+    </h4>
+    
     {% set landing_page = namespace(page=false) %}
-    {% for p in hidden_pages if p.slug == "landing-page-about-hidden" %}
+    {% for p in hidden_pages if p.slug == "landing-page" %}
         {% set landing_page.page = p %}
     {% endfor %}
     <div class="article-content">
