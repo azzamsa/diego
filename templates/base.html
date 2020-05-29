@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
     <head>
-        <meta charset="utf-8"/>
-        <meta name="author" content=""/>
-        <meta name="description" content=""/>
-        <meta name="referrer" content="no-referrer"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        {% if article and article.author %}
+            <meta name="author" content="{{ article.author }}" />
+        {% elif page and page.author %}
+            <meta name="author" content="{{ page.author }}" />
+        {% else %}
+            <meta name="author" content="{{ AUTHOR }}" />
+        {% endif %}
+
+        {% if SITE_DESCRIPTION %}
+            <meta name="description" content="{% block head_description %}{{ SITE_DESCRIPTION|e }}{% endblock head_description %}" />
+        {% endif %}
+        <title>{% block title %}{{ SITENAME|striptags|e }}{% endblock title %}</title>
         <title>{{ SITENAME }}</title>
-        <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico" type="image/x-icon" />
 
+        <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico" type="image/x-icon" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono"/>
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css">
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css" media="screen"/>
