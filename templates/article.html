@@ -44,7 +44,7 @@
         <ul class="list">
             <li>
                 {% if article.category|trim|count > 0 %}
-                    <a class="category-link" href="{{ SITEURL }}/{{ CATEGORIES_URL }}#{{ category.slug }}-ref">{{ article.category }}</a>
+                    <a class="category-link" href="{{ SITEURL }}/{{ CATEGORIES_URL }}/{{ category.slug }}">{{ article.category }}</a>
                 {% endif %}
             </li>
         </ul>

@@ -1,1 +1,63 @@
-{% extends "archives.html" %}
+{% extends "base.html" %}
+
+{% block title %}
+    {% trans %} {{ category }} Categories · {% endtrans %}{{ super() }}
+{% endblock title %}
+
+{% block head_description %}
+    {{ category }} Categories of the {{ SITENAME|striptags|e }} blog.
+{% endblock head_description %}
+
+{% block meta_tags_in_head %}
+    {{ super() }}
+    <meta property="og:title" content="All Categories · {{ SITENAME|striptags|e }}"/>
+    <meta name="twitter:title" content="All Categories · {{ SITENAME|striptags|e }}">
+    <meta property="og:url" content="{{ SITEURL }}/{{ CATEGORIES_URL }}" />
+    <meta property="og:description" content="All categories of the {{ SITENAME|striptags|e }} blog" />
+    <meta name="twitter:description" content="All categories of the {{ SITENAME|striptags|e }} blog">
+    <meta property="og:site_name" content="{{ SITENAME|striptags|e }}" />
+    <meta property="og:article:author" content="{{ AUTHOR }}" />
+    {% if FEATURED_IMAGE %}
+        <meta property="og:image" content="{{ FEATURED_IMAGE }}" />
+        <meta name="twitter:image" content="{{ FEATURED_IMAGE }}" >
+    {% endif %}
+{% endblock meta_tags_in_head %}
+
+{% block content %}
+    <h1>Posts in the <q>{{ category }}</q> category</h1>
+
+    <ul class="posts">
+        {% for article in dates %}
+            {% set year = article.date.strftime('%Y') %}
+            {% if loop.first %}
+                <li class="groupby">{{ year }}</li>
+            {% else %}
+                {% set prevyear = loop.previtem.date.strftime('%Y') %}
+                {% if prevyear != year %}
+                    <li class="groupby">{{ year }}</li>
+                {% endif %}
+            {% endif %}
+
+            {% if loop.last %}
+                <li itemscope class="last-entry-of-year">
+            {% else %}
+                    {% set next_year = loop.nextitem.date.strftime('%Y') %}
+                    {% if next_year != year %}
+                        <li itemscope class="last-entry-of-year">
+                    {% else %}
+                            <li itemscope>
+                    {% endif %}
+            {% endif %}
+
+            <time class="section-meta" itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">
+                {{ article.locale_date }}
+            </time>
+            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
+                            </li>
+        {% endfor %}
+                        </li>
+                </li>
+    </ul>
+    <a href="{{ SITEURL }}/{{ CATEGORIES_URL }}">Show all categories</a>
+
+{% endblock %}
