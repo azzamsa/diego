@@ -3,6 +3,10 @@
 Diego is a pelican port of Hugo theme with the same name. It's clean, fast and
 responsive.
 
+> :warning: **PS**: This repository contains my personal Diego configuration
+> (some hardcoded). I don't advise people to use it directly and I won't be
+> accepting pull requests (since all feature here is enough for me).
+
 ## Feature
 
 - Translatable pages
