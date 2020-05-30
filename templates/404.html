@@ -1,14 +1,25 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="{{ AUTHOR }}"/>
+        <meta name="description" content=""/>
+        <meta name="referrer" content="no-referrer"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-{% block title %}
-    Page not found · {{ super() }}
-{% endblock title %}
+        <title>404 - Page not found</title>
 
-{% block content %}
-    <h1>404</h1>
-    <p>
-        The page you were looking for does not exist.</br>
-        <a href="{{ SITEURL }}">Visit the home page</a>
-    </p>
-{% endblock %}
-
+        <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono"/>
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css">
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/404.css">
+    </head>
+    <body>
+        <img alt="logo" src="{{ SITEURL }}/theme/img/logo.svg" width="200">
+        <h1>404</h1>
+        <p>
+            The page you were looking for does not exist.</br>
+            <a href="{{ SITEURL }}">Visit the home page</a>
+        </p>
+    </body>
+</html>
