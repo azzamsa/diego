@@ -3,6 +3,25 @@
     {{ article.title|striptags|e }} {% if article.subtitle %} - {{ article.subtitle|striptags|e }} {% endif %} · {{ super() }}
 {% endblock title %}
 
+{% block head_description %}
+    {% if article.summary %}
+        {{ article.summary|striptags|e }}
+    {% endif %}
+{% endblock head_description %}
+
+{% block meta_tags_in_head %}
+    {% if article.redirect %}
+        <meta http-equiv="refresh" content="0;URL={{ article.redirect }}" />
+    {% endif %}
+    {{ super() }}
+    {% if article.tags or article.category or article.keywords %}
+        <meta name="keywords" content="{{ [article.tags|join(', '), article.category, article.keywords]|join(', ') }}" />
+    {% endif %}
+
+    {% from 'includes/smo.html' import smo_metadata with context %}
+    {{ smo_metadata(article) }}
+{% endblock meta_tags_in_head %}
+
 {% block content %}
 
     <h1>{{ article.title }}</h1>
@@ -15,9 +34,9 @@
         {{ article.content }}
     </div>
 
-    <di>
+    <div>
         {% from 'includes/comments.html' import comments_section with context %}
         {{ comments_section(article) }}
-    </di>
+    </div>
 
 {% endblock %}

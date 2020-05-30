@@ -16,10 +16,15 @@
         {% if SITE_DESCRIPTION %}
             <meta name="description" content="{% block head_description %}{{ SITE_DESCRIPTION|e }}{% endblock head_description %}" />
         {% endif %}
-        <title>{% block title %}{{ SITENAME|striptags|e }}{% endblock title %}</title>
-        <title>{{ SITENAME }}</title>
 
-        <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico" type="image/x-icon" />
+        {% block meta_tags_in_head %}
+            <meta property="og:type" content="article" />
+            <meta name="twitter:card" content="summary">
+        {% endblock meta_tags_in_head %}
+
+        <title>{% block title %}{{ SITENAME|striptags|e }}{% endblock title %}</title>
+
+        <link rel="shortcut icon" href="{{ SITEURL }}/theme/images/favicon.ico"/>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito|Roboto+Mono"/>
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/main.css">
         <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/pygments.css" media="screen"/>

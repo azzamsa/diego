@@ -1,11 +1,36 @@
-{% extends "base.html" %}
-{% block title %}{{ page.title }}{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ page.title|striptags|e }} {% if page.subtitle %} - {{ page.subtitle|striptags|e }} {% endif %} · {{ super() }}
+{% endblock title %}
+
+{% block head_description %}
+    {% if page.summary %}
+        {{ page.summary|striptags|e }}
+    {% endif %}
+{% endblock head_description %}
+
+{% block meta_tags_in_head %}
+    {{ super() }}
+    {% if page.keywords %}
+        <meta name="keywords" content="{{ page.keywords }}" />
+    {% endif %}
+
+    {% from 'includes/smo.html' import smo_metadata with context %}
+    {{ smo_metadata(page) }}
+{% endblock meta_tags_in_head %}
 
 {% block content %}
 
-    <h1 class="entry-title">{{ page.title }}</h1>  
+    <h1 class="entry-title">{{ page.title }}</h1>
     <div class="entry-content">
         {{ page.content }}
     </div>
+
+    <div>
+        {% from 'includes/comments.html' import comments_section with context %}
+        {{ comments_section(page) }}
+    </div>
+
 
 {% endblock %}

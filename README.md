@@ -19,6 +19,7 @@ To see how it looks, visit [my website][my-web] or its [configuration][sc]
 
 - Diego Vicente - Original author
 - Jente Hidskes
+- [Pelican Elegant](https://github.com/Pelican-Elegant/elegant)
 
 [my-web]: https://azzamsa.com/
 [sc]: github.com/azzamsa/azzamsa.github.io
