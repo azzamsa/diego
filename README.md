@@ -18,8 +18,8 @@ To see how it looks, visit [my website][my-web] or its [configuration][sc]
 ## Credits
 
 - Diego Vicente - Original author
-- Jente Hidskes
-- [Pelican Elegant](https://github.com/Pelican-Elegant/elegant)
+- Jente Hidskes - new color scheme
+- [Pelican Elegant](https://github.com/Pelican-Elegant/elegant) - jinja2 inspirations
 
 [my-web]: https://azzamsa.com/
 [sc]: github.com/azzamsa/azzamsa.github.io
