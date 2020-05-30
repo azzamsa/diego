@@ -17,20 +17,6 @@
     <a href="/license">{{ REALNAME }} © <span id="year">2018</span></a>
 </footer>
 
-
-<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/zoom.css">
-<link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/syntax.css">
-
-<script defer type="text/javascript" src="{{ SITEURL }}/theme/js/zoom-vanilla.js"></script>
-<script type="text/javascript">
-    document.addEventListener('DOMContentLoaded', function() {
-        images = document.querySelectorAll("img[data-action=\"zoom\"]");
-        images.forEach(function(image) {
-            image.style.display = "block";
-        })
-    }, false);
-</script>
-
 <script>
     document.getElementById("year").innerHTML = new Date().getFullYear();
 </script>
