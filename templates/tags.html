@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {% trans %}All Tags · {% endtrans %}{{ super() }}
+{% endblock title %}
+
+{% block head_description %}
+    All tags of the {{ SITENAME|striptags|e }} blog.
+{% endblock head_description %}
+
+{% block meta_tags_in_head %}
+    {{ super() }}
+    <meta property="og:title" content="All Categories · {{ SITENAME|striptags|e }}"/>
+    <meta name="twitter:title" content="All Categories · {{ SITENAME|striptags|e }}">
+    <meta property="og:url" content="{{ SITEURL }}/{{ CATEGORIES_URL }}" />
+    <meta property="og:description" content="All categories of the {{ SITENAME|striptags|e }} blog" />
+    <meta name="twitter:description" content="All categories of the {{ SITENAME|striptags|e }} blog">
+    <meta property="og:site_name" content="{{ SITENAME|striptags|e }}" />
+    <meta property="og:article:author" content="{{ AUTHOR }}" />
+    {% if FEATURED_IMAGE %}
+        <meta property="og:image" content="{{ FEATURED_IMAGE }}" />
+        <meta name="twitter:image" content="{{ FEATURED_IMAGE }}" >
+    {% endif %}
+{% endblock meta_tags_in_head %}
+
+{% block content %}
+    <h1>All Tags</h1>
+
+    <ul>
+        {% for tag, articles in tags|sort %}
+            <li><a href="{{ SITEURL }}/{{ TAGS_URL }}/{{ tag.slug }}">{{ tag }}</a> ({{ articles|count }})</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
