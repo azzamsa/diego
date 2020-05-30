@@ -26,38 +26,7 @@
 {% block content %}
     <h1>Posts in the <q>{{ tag }}</q> tag</h1>
 
-    <ul class="posts">
-        {% for article in dates %}
-            {% set year = article.date.strftime('%Y') %}
-            {% if loop.first %}
-                <li class="groupby">{{ year }}</li>
-            {% else %}
-                {% set prevyear = loop.previtem.date.strftime('%Y') %}
-                {% if prevyear != year %}
-                    <li class="groupby">{{ year }}</li>
-                {% endif %}
-            {% endif %}
-
-            {% if loop.last %}
-                <li itemscope class="last-entry-of-year">
-            {% else %}
-                    {% set next_year = loop.nextitem.date.strftime('%Y') %}
-                    {% if next_year != year %}
-                        <li itemscope class="last-entry-of-year">
-                    {% else %}
-                            <li itemscope>
-                    {% endif %}
-            {% endif %}
-
-            <time class="section-meta" itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">
-                {{ article.locale_date }}
-            </time>
-            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-                            </li>
-        {% endfor %}
-                        </li>
-                </li>
-    </ul>
+    {% include 'includes/post.html' %}
     <a href="{{ SITEURL }}/{{ TAGS_URL }}">Show all tags</a>
 
 {% endblock %}
