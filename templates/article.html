@@ -62,7 +62,7 @@
             <ul class="list">
                 {% for tag in article.tags|sort %}
                     <li>
-                        <a href="{{ SITEURL }}/{{ TAGS_URL }}#{{ tag.slug }}-ref">{{ tag }}</a>
+                        <a href="{{ SITEURL }}/{{ TAGS_URL }}/{{ tag.slug }}">{{ tag }}</a>
                     </li>
                 {% endfor %}
             </ul>
