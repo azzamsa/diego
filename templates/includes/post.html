@@ -1,5 +1,5 @@
 <ul class="posts">
-    {% for article in dates %}
+    {% for article in dates if article.visible != 'False' %}
         {% set year = article.date.strftime('%Y') %}
         {% if loop.first %}
             <li class="groupby">{{ year }}</li>

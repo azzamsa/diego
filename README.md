@@ -12,6 +12,7 @@ responsive.
 - Translatable pages
 - Comments
 - Language switching via pelican's i18n_subsites
+- Hide specific article
 
 To see how it looks, visit [my website][my-web] or its [configuration][sc]
 
