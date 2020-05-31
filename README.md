@@ -13,13 +13,14 @@ responsive.
 - Comments
 - Language switching via pelican's i18n_subsites
 - Hide specific article
+- many more ...
 
 To see how it looks, visit [my website][my-web] or its [configuration][sc]
 
 ## Credits
 
 - Diego Vicente - Original author
-- Jente Hidskes - new color scheme
+- Jente Hidskes - [new color scheme](https://github.com/Hjdskes/diego-hugo-theme)
 - [Pelican Elegant](https://github.com/Pelican-Elegant/elegant) - jinja2 inspirations
 
 [my-web]: https://azzamsa.com/
