@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Popular Articles</h1>
+    <p>Popular articles, updated semi-regularly.</p>
+
+    <ul>
+        {% for article in POPULAR_ARTICLES.get(DEFAULT_LANG) %}
+            <li>
+                <a href="{{ SITEURL }}/blog/{{ article.path }}">{{ article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -22,6 +22,7 @@ To see how it looks, visit [my website][my-web] or its [configuration][sc]
 - Diego Vicente - Original author
 - Jente Hidskes - [new color scheme](https://github.com/Hjdskes/diego-hugo-theme)
 - [Pelican Elegant](https://github.com/Pelican-Elegant/elegant) - jinja2 inspirations
+- Inspirations: [Martin Tournoij's blog](https://www.arp242.net/)
 
 [my-web]: https://azzamsa.com/
 [sc]: github.com/azzamsa/azzamsa.github.io

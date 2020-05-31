@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Favourite Articles</h1>
+    
+    <ul>
+        {% for article in FAVOURITE_ARTICLES.get(DEFAULT_LANG) %}
+            <li>
+                <a href="{{ SITEURL }}/blog/{{ article.path }}">{{ article.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
