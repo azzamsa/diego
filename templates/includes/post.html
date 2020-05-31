@@ -1,34 +1,32 @@
-{#% macro show_articles(articles) %#}
-    <ul class="posts">
-        {% for article in dates %}
-            {% set year = article.date.strftime('%Y') %}
-            {% if loop.first %}
+<ul class="posts">
+    {% for article in dates %}
+        {% set year = article.date.strftime('%Y') %}
+        {% if loop.first %}
+            <li class="groupby">{{ year }}</li>
+        {% else %}
+            {% set prevyear = loop.previtem.date.strftime('%Y') %}
+            {% if prevyear != year %}
                 <li class="groupby">{{ year }}</li>
-            {% else %}
-                {% set prevyear = loop.previtem.date.strftime('%Y') %}
-                {% if prevyear != year %}
-                    <li class="groupby">{{ year }}</li>
+            {% endif %}
+        {% endif %}
+
+        {% if loop.last %}
+            <li itemscope class="last-entry-of-year">
+        {% else %}
+                {% set next_year = loop.nextitem.date.strftime('%Y') %}
+                {% if next_year != year %}
+                    <li itemscope class="last-entry-of-year">
+                {% else %}
+                        <li itemscope>
                 {% endif %}
-            {% endif %}
+        {% endif %}
 
-            {% if loop.last %}
-                <li itemscope class="last-entry-of-year">
-            {% else %}
-                    {% set next_year = loop.nextitem.date.strftime('%Y') %}
-                    {% if next_year != year %}
-                        <li itemscope class="last-entry-of-year">
-                    {% else %}
-                            <li itemscope>
-                    {% endif %}
-            {% endif %}
-
-            <time class="section-meta" itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">
-                {{ article.locale_date }}
-            </time>
-            <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
-                            </li>
-        {% endfor %}
+        <time class="section-meta" itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">
+            {{ article.locale_date }}
+        </time>
+        <a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a>
                         </li>
-                </li>
-    </ul>
-{#% endmacro %#}
+    {% endfor %}
+                    </li>
+            </li>
+</ul>
