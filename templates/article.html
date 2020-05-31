@@ -37,13 +37,15 @@
     <div>
         <!-- Pelican only support single category per article-->
         {% if article.category|trim|count > 0 %}
-            <div class="align">
-                <!-- Icon taken from the Minimo theme -->
-                <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true">
-                    <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"></path>
-                </svg>
-            </div>
-            <a class="category-link" href="{{ SITEURL }}/{{ CATEGORIES_URL }}/{{ category.slug }}">{{ article.category }}</a>
+            {% if article.visible != "False" %}
+                <div class="align">
+                    <!-- Icon taken from the Minimo theme -->
+                    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true">
+                        <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"></path>
+                    </svg>
+                </div>
+                <a class="category-link" href="{{ SITEURL }}/{{ CATEGORIES_URL }}/{{ category.slug }}">{{ article.category }}</a>
+            {% endif %}
         {% endif %}
     </div>
 

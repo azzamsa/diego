@@ -28,7 +28,9 @@
 
     <ul>
         {% for category, articles in categories|sort %}
-            <li><a href="{{ SITEURL }}/{{ CATEGORIES_URL }}/{{ category.slug }}">{{ category }}</a> ({{ articles|count }})</li>
+            {% if category != "Hidden" %}
+                <li><a href="{{ SITEURL }}/{{ CATEGORIES_URL }}/{{ category.slug }}">{{ category }}</a> ({{ articles|count }})</li>
+            {% endif %}
         {% endfor %}
     </ul>
 {% endblock content %}
