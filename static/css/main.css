@@ -379,8 +379,9 @@ input {
   color:black;
   /* Icon */
 }
-.tab-label:hover { 
-  border: 2pt solid lightgreen;
+.tab-label:hover {
+    background: var(--anchor-hover-color);
+    color: white;
 }
 
 .tab-label::after {
@@ -409,7 +410,8 @@ input {
 }
 
 input:checked + .tab-label {
-  background: lightgreen;
+    background: var(--anchor-color);
+    color: white;
 }
 input:checked + .tab-label::after {
   transform: rotate(90deg);
