@@ -7,13 +7,13 @@
 {% if article.locale_modified and article.modified %}
     {% set delta = (article.modified - article.date).days %}
     {% if delta > 0 %}
-        • {{ gettext('Last Updated') }}
+        • {{ gettext('Updated') }}:
 
         {% set day = article.modified.strftime('%d')|int %}
         <time datetime="{{ article.modified.isoformat() }}">{{ article.modified.strftime('%b') }} {{ day }} {{- article.modified.strftime(', %Y') }}</time>
     {% endif %}
 
 {% elif article.modified %}
-    • {{ gettext('Last Updated') }}
+    • {{ gettext('Updated') }}:
     <div class="last-updated">{{ article.modified }}</div>
 {% endif %}
