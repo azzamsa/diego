@@ -349,6 +349,19 @@ iframe {
   opacity: 0.9;
 }
 
+.table-of-content .toc ul {
+    font-size: 15px;
+}
+
+.table-of-content .toc .toctitle {
+    font-size: 75%;
+    color: var(--blockquote-color);
+}
+
+.table-of-content a {
+    text-transform: capitalize;
+}
+
 /* # comments */
 .comment {
   margin-top: 3em;

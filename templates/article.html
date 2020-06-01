@@ -30,6 +30,12 @@
         {% include 'includes/post_stats.html' %}
     </div>
 
+    {% if article.toc %}
+        <div class="table-of-content">
+            {{ article.toc }}
+        </div>
+    {% endif %}
+
     <div class="entry-content">
         {{ article.content }}
     </div>
