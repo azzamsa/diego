@@ -5,9 +5,9 @@
     <p>Popular articles, updated semi-regularly.</p>
 
     <ul>
-        {% for article in POPULAR_ARTICLES.get(DEFAULT_LANG) %}
+        {% for article in articles |selectattr("popular_rating")|sort(attribute = 'popular_rating') %}
             <li>
-                <a href="{{ SITEURL }}/blog/{{ article.path }}">{{ article.title }}</a>
+                <a href="{{ SITEURL }}/{{ article.slug }}">{{ article.title }}</a>
             </li>
         {% endfor %}
     </ul>

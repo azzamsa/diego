@@ -4,9 +4,10 @@
     <h1>Favourite Articles</h1>
     
     <ul>
-        {% for article in FAVOURITE_ARTICLES.get(DEFAULT_LANG) %}
+        <!-- can't use `if`, jinja2 pipeline not ordered? -->
+        {% for article in articles |selectattr("favourite_rating")|sort(attribute = 'favourite_rating') %}
             <li>
-                <a href="{{ SITEURL }}/blog/{{ article.path }}">{{ article.title }}</a>
+                <a href="{{ SITEURL }}/{{ article.slug }}">{{ article.title }}</a>
             </li>
         {% endfor %}
     </ul>
