@@ -19,11 +19,10 @@ To see how it looks, visit [my website][my-web] or its [configuration][sc]
 
 ## Credits
 
-- Diego Vicente - Original author
+- Diego Vicente - [Original author](https://gitlab.com/DiegoVicente/diegovicente.gitlab.io)
 - Jente Hidskes - [new color scheme](https://github.com/Hjdskes/diego-hugo-theme)
 - [Pelican Elegant](https://github.com/Pelican-Elegant/elegant) - template inspiration
-- Inspirations: [Martin Tournoij's blog](https://www.arp242.net/),[Markdown
-  guide web](https://www.markdownguide.org/)
+- Inspirations: [Martin Tournoij's blog](https://www.arp242.net/),[Markdown guide web](https://www.markdownguide.org/)
 
 [my-web]: https://azzamsa.com/
 [sc]: github.com/azzamsa/azzamsa.github.io
