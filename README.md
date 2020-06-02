@@ -13,6 +13,8 @@ responsive.
 - Comments
 - Language switching via pelican's i18n_subsites
 - Hide specific article
+- popular and favourite articles
+- nice paragraph divider, TOC, and alert
 - many more ...
 
 To see how it looks, visit [my website][my-web] or its [configuration][sc]
@@ -25,4 +27,4 @@ To see how it looks, visit [my website][my-web] or its [configuration][sc]
 - Inspirations: [Martin Tournoij's blog](https://www.arp242.net/),[Markdown guide web](https://www.markdownguide.org/)
 
 [my-web]: https://azzamsa.com/
-[sc]: github.com/azzamsa/azzamsa.github.io
+[sc]: https://github.com/azzamsa/azzamsa.github.io
