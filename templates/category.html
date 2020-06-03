@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 
 {% block title %}
-    {% trans %} {{ category }} Categories · {% endtrans %}{{ super() }}
+    {{ category }}
+    {{ gettext('Categories') }} · {{ super() }}
 {% endblock title %}
 
 {% block head_description %}

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2020-05-29 10:41+0700\n"
+"POT-Creation-Date: 2020-06-03 12:45+0700\n"
 "PO-Revision-Date: 2020-05-29 10:35+0700\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: id\n"
@@ -18,13 +18,61 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.7.0\n"
 
-#: templates/base.html:35
+#: templates/archives.html:5
+msgid "All Post"
+msgstr "Semua"
+
+#: templates/archives.html:6
+msgid "By"
+msgstr "Dari"
+
+#: templates/archives.html:7
+msgid "favourites"
+msgstr "favorit"
+
+#: templates/archives.html:8
+msgid "popularity"
+msgstr "populer"
+
+#: templates/article.html:82
+msgid "Continue Reading:"
+msgstr "Lanjutkan Membaca"
+
+#: templates/base.html:53
 msgid "Projects"
 msgstr "Proyek"
 
-#: templates/base.html:36
+#: templates/base.html:54
 msgid "About"
 msgstr "Tentang"
+
+#: templates/categories.html:4
+msgid "All Categories · "
+msgstr "Semua Kategori ·"
+
+#: templates/category.html:5
+msgid "Categories"
+msgstr "Kategori"
+
+#: templates/favourites.html:4
+msgid "Favourite Articles"
+msgstr "Artikel Favorit"
+
+#: templates/popular.html:4
+msgid "Popular Articles"
+msgstr "Artikel populer"
+
+#: templates/popular.html:5
+msgid "Popular articles, updated semi-regularly."
+msgstr "Artikel populer, diperbarui secara semi-teratur."
+
+#: templates/tag.html:4
+msgid "Categories · "
+msgstr "Kategori · "
+
+#: templates/tags.html:4
+msgid "All Tags · "
+msgstr "Semua Tag · "
 
 #: templates/includes/last_updated.html:3
 msgid "Posted"
@@ -32,10 +80,13 @@ msgstr "Terbit"
 
 #: templates/includes/last_updated.html:10
 #: templates/includes/last_updated.html:17
-msgid "Last Updated"
+msgid "Updated"
 msgstr "Diperbaharui"
 
 #: templates/includes/post_stats.html:2
 msgid "min read"
 msgstr "menit"
 
+#: templates/includes/translations.html:4
+msgid "Translations:"
+msgstr "Terjemahan:"

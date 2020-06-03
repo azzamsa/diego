@@ -2,8 +2,10 @@
 
 {% block content %}
     <div>
-        <h1>All Post<sup style="text-align: top;font-size:15px">
-	    By: <a href="{{ SITEURL }}/favourites">favourites</a>, <a href="{{ SITEURL }}/popular">popularity</a>
+        <h1>{{ gettext('All Post') }}<sup style="text-align: top;font-size:15px">
+	    {{ gettext('By') }}:
+            <a href="{{ SITEURL }}/favourites">{{ gettext('favourites') }}</a>,
+            <a href="{{ SITEURL }}/popular">{{ gettext('popularity') }}</a>
         </sup></h1>
     </div>
 

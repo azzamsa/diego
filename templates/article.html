@@ -30,6 +30,9 @@
         {% include 'includes/post_stats.html' %}
     </div>
 
+    {% import 'includes/translations.html' as translations with context %}
+    {{ translations.translations_for(article) }}
+
     {% if article.toc %}
         <div class="table-of-content">
             {{ article.toc }}
@@ -76,7 +79,7 @@
 
     {% if article.related_posts %}
         <div>
-            <p>Continue Reading:</p>
+            <p>{{ gettext('Continue Reading:') }}</p>
             <ul>
                 {% for related_post in article.related_posts %}
                     <li><a href="{{ SITEURL }}/{{ related_post.url }}">{{ related_post.title }}</a></li>

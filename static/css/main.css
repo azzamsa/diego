@@ -351,8 +351,8 @@ iframe {
   opacity: 0.9;
 }
 
-.table-of-content .toc ul {
-    font-size: 15px;
+.translations {
+    font-size: 75%;
 }
 
 .table-of-content .toc .toctitle {

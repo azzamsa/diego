@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Popular Articles</h1>
-    <p>Popular articles, updated semi-regularly.</p>
+    <h1>{{ gettext('Popular Articles') }}</h1>
+    <p>{{ gettext('Popular articles, updated semi-regularly.') }}</p>
 
     <ul>
         {% for article in articles |selectattr("popular_rating")|sort(attribute = 'popular_rating') %}
-            <li>
-                <a href="{{ SITEURL }}/{{ article.slug }}">{{ article.title }}</a>
-            </li>
+        <li>
+            <a href="{{ SITEURL }}/{{ article.slug }}">{{ article.title }}</a>
+        </li>
         {% endfor %}
     </ul>
 {% endblock %}

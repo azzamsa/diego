@@ -1,0 +1,15 @@
+{% macro translations_for(article) %}
+    {% if article.translations %}
+        <div class="translations">
+            {{ gettext('Translations:') }}
+            {% for translation in article.translations|sort(attribute = 'lang') %}
+                <a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+                {% if loop.index0 + 2 == loop.length %}
+                    and
+                {% elif not loop.last %}
+                    ,
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endmacro %}

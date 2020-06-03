@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Favourite Articles</h1>
-    
+    <h1>{{ gettext('Favourite Articles') }}</h1>
+
     <ul>
         <!-- can't use `if`, jinja2 pipeline not ordered? -->
         {% for article in articles |selectattr("favourite_rating")|sort(attribute = 'favourite_rating') %}

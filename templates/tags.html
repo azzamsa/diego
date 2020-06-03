@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    {% trans %}All Tags · {% endtrans %}{{ super() }}
+    {{ gettext('All Tags · ') }}{{ super() }}
 {% endblock title %}
 
 {% block head_description %}
