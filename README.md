@@ -25,9 +25,9 @@ To see how it looks, visit [my website][my-web] or its [configuration][sc]
 - Jente Hidskes - [new color scheme](https://github.com/Hjdskes/diego-hugo-theme)
 - [Pelican Elegant](https://github.com/Pelican-Elegant/elegant) - jinja2
   template code
-- pygments-vimstyles - [https://github.com/uraimo/pygments-vimstyles] - pygments theme
+- [pygments-vimstyles](https://github.com/uraimo/pygments-vimstyles) - pygments theme
 - [bootstrap](https://github.com/twbs/icons) svg icons
 - Inspirations: [Martin Tournoij's blog](https://www.arp242.net/),[Markdown guide web](https://www.markdownguide.org/)
 
 [my-web]: https://azzamsa.com/
-[sc]: https://github.com/azzamsa/azzamsa.github.io
+[sc]: https://github.com/azzamsa/azzamsa.github.io/tree/source
