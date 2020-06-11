@@ -21,10 +21,10 @@ To see how it looks, visit [my website][my-web] or its [configuration][sc]
 
 ## Credits
 
-- Diego Vicente - [Original author](https://gitlab.com/DiegoVicente/diegovicente.gitlab.io)
+- Diego Vicente - [original author](https://gitlab.com/DiegoVicente/diegovicente.gitlab.io)
 - Jente Hidskes - [new color scheme](https://github.com/Hjdskes/diego-hugo-theme)
-- [Pelican Elegant](https://github.com/Pelican-Elegant/elegant) - jinja2
-  template code
+- [Pelican Elegant](https://github.com/Pelican-Elegant/elegant) - borrows Jinja2
+  template and Javascript code.
 - [pygments-vimstyles](https://github.com/uraimo/pygments-vimstyles) - pygments theme
 - [bootstrap](https://github.com/twbs/icons) svg icons
 - Inspirations: [Martin Tournoij's blog](https://www.arp242.net/),[Markdown guide web](https://www.markdownguide.org/)
